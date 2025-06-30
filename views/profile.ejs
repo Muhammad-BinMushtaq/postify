@@ -13,8 +13,14 @@
         <div class="flex justify-end">
             <a href="/logout" class=" block bg-red-500 px-3 py-2 mt-3 rounded-md outline-none" type="submit">Logout</a>
         </div>
-        <h1 class="text-2xl  ">Hello ,<%=user.name%> 👋</h1>
-        <p>You can create new post</p>
+
+        <div class="flex gap-3 items-center">
+            <a href="/profile/update" class=" w-10 h-10 rounded-full overflow-hidden">
+                <img class="w-full h-full object-cover " src="/images/upload/<%=user.profilePic%>" >
+            </a>
+            <h1 class="text-2xl  ">Hello ,<%=user.name%> 👋</h1>
+        </div>
+        <p class="mt-3">You can create new post</p>
 
         <div class="post mt-5">
             <form action="/post" method="post">
@@ -38,7 +44,8 @@
                         <%=post.content%>
                     </p>
 
-                    <small class="mt-5 block"><%=post.likes.length%> Like
+                    <small class="mt-5 block">
+                        <%=post.likes.length%> Like
                     </small>
                     <div class="btns mt-[3px] flex gap-3  ">
 
